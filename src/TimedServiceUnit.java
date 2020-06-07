@@ -33,6 +33,7 @@ public class TimedServiceUnit{
             inService = customer;
             return true;
         }
+        System.out.println("qat");
         return false;
 
     }
@@ -54,6 +55,7 @@ public class TimedServiceUnit{
     public void setTimeRemainingInSecond(double timeRemaningInSecond) {
         this.timeRemainingInSecond = timeRemaningInSecond;
     }
+
     public Customer passTime(int timeInSeconds)
     {
         this.timeRemainingInSecond -= timeInSeconds;

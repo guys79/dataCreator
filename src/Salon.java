@@ -54,6 +54,7 @@ public class Salon {
         {
             unitToUse.enterCustomer(this.manicureQueue.get(0));
             this.manicureQueue.remove(0);
+            unitToUse = this.manicure.getOccupied();
         }
 
         unitToUse = this.pedicure.getOccupied();
@@ -61,6 +62,7 @@ public class Salon {
         {
             unitToUse.enterCustomer(this.pedicureQueue.get(0));
             this.pedicureQueue.remove(0);
+            unitToUse = this.pedicure.getOccupied();
         }
 
         unitToUse = this.tan.getOccupied();
@@ -68,6 +70,7 @@ public class Salon {
         {
             unitToUse.enterCustomer(this.tanQueue.get(0));
             this.tanQueue.remove(0);
+            unitToUse = this.tan.getOccupied();
         }
     }
 
