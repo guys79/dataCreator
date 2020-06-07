@@ -14,7 +14,7 @@ public class TimedServiceUnit{
         this.minTimeInSeconds = minTimeInSeconds;
         occupied = false;
         this.inService = null;
-        this.timeRemainingInSecond = setTreatmentTime(minTimeInSeconds,maxTimeInSeconds);
+
     }
 
     private double setTreatmentTime(double minTimeInSeconds, double maxTimeInSeconds) {
@@ -27,6 +27,7 @@ public class TimedServiceUnit{
     public boolean enterCustomer(Customer customer)
     {
         if(!occupied) {
+            this.timeRemainingInSecond = setTreatmentTime(minTimeInSeconds,maxTimeInSeconds);
           //  System.out.println("customer "+customer.getId()+" is in");
             occupied = true;
             inService = customer;
