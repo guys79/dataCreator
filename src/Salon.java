@@ -49,28 +49,28 @@ public class Salon {
         }
 
         //Add customers to services
-        TimedServiceUnit unitToUse = this.manicure.getOccupied();
+        TimedServiceUnit unitToUse = this.manicure.getNotOccupied();
         while (unitToUse!=null && this.manicureQueue.size()>0)
         {
             unitToUse.enterCustomer(this.manicureQueue.get(0));
             this.manicureQueue.remove(0);
-            unitToUse = this.manicure.getOccupied();
+            unitToUse = this.manicure.getNotOccupied();
         }
 
-        unitToUse = this.pedicure.getOccupied();
+        unitToUse = this.pedicure.getNotOccupied();
         while (unitToUse!=null && this.pedicureQueue.size()>0)
         {
             unitToUse.enterCustomer(this.pedicureQueue.get(0));
             this.pedicureQueue.remove(0);
-            unitToUse = this.pedicure.getOccupied();
+            unitToUse = this.pedicure.getNotOccupied();
         }
 
-        unitToUse = this.tan.getOccupied();
+        unitToUse = this.tan.getNotOccupied();
         while (unitToUse!=null && this.tanQueue.size()>0)
         {
             unitToUse.enterCustomer(this.tanQueue.get(0));
             this.tanQueue.remove(0);
-            unitToUse = this.tan.getOccupied();
+            unitToUse = this.tan.getNotOccupied();
         }
     }
 

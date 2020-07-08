@@ -50,7 +50,7 @@ public abstract class AbstractTimedService {
         return finished;
     }
 
-    public TimedServiceUnit getOccupied()
+    public TimedServiceUnit getNotOccupied()
     {
         for(TimedServiceUnit unit : this.units)
         {

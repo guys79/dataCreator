@@ -18,13 +18,15 @@ public class Simulation {
         int numOfNewCustomers;
         Set<Customer> customers = new HashSet<>();
         Customer customer;
+        int timePassed = 0;
         for(int second = 0;second<this.simulationLengthInSeconds;second++)
         {
             salon.passTime(1);
+            timePassed++;
             numOfNewCustomers  = getPoisson(this.numOfCustomerInHour/3600.0);
             for(int j=0; j<numOfNewCustomers;j++)
             {
-                customer = new Customer();
+                customer = new Customer(timePassed);
                 System.out.println(customer);
                 customers.add(customer);
                 salon.AddToQueue(customer);

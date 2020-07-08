@@ -5,15 +5,24 @@ public class Customer {
     private boolean manicure;
     private boolean pedicure;
     private boolean tan;
+    private boolean initManicure;
+    private boolean initPedicure;
+    private boolean initTan;
     private double timeSpentInQueueInSeconds;
     public static int numOfCustomers = 0;
     private int id;
+    private int arrivalTime;
 
-    public Customer() {
+    public Customer(int arrivalTime) {
         this.timeSpentInQueueInSeconds = 0;
         numOfCustomers+=1;
         id = numOfCustomers;
+        this.arrivalTime = arrivalTime;
         setParameters();
+    }
+
+    public int getArrivalTime() {
+        return arrivalTime;
     }
 
     public int getId() {
@@ -39,6 +48,10 @@ public class Customer {
             this.tan = true;
         else
             this.tan = false;
+
+        this.initManicure = manicure;
+        this.initPedicure = pedicure;
+        this.initTan = tan;
     }
     public boolean isManicure() {
         return manicure;
@@ -46,6 +59,18 @@ public class Customer {
 
     public void setManicure(boolean manicure) {
         this.manicure = manicure;
+    }
+
+    public boolean getInitManicure() {
+        return initManicure;
+    }
+
+    public boolean getInitPedicure() {
+        return initPedicure;
+    }
+
+    public boolean getInitTan() {
+        return initTan;
     }
 
     public boolean isPedicure() {
